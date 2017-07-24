@@ -11,7 +11,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 
-express.static(path.join(__dirname, '../public'));
+app.use(express.static(path.join(__dirname, '..', 'public')));
+app.use(express.static(path.join(__dirname, '..', 'node_modules')));
 
 app.use('/api',require('./api'));
 
